@@ -203,7 +203,7 @@ class BinanceClient extends EventEmitter {
   }
 
   _onMessage(raw) {
-    let msg = JSON.parse(raw);
+    let msg = JSON.parse(raw.data); //raw.data instead of raw
 
     // ticker
     if (msg.stream === "!ticker@arr") {
